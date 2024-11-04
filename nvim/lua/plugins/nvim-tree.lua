@@ -22,10 +22,13 @@ return {
 				group_empty = true,
 			},
 			filters = {
+				enable = true,
+				git_ignored = false,
 				dotfiles = false,
 				custom = { ".DS_Store", ".git" },
 			},
 			git = {
+				enable = true,
 				ignore = false,
 			},
 		})

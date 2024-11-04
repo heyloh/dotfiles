@@ -26,6 +26,7 @@ return {
 				"cssls",
 				"tailwindcss",
 				"lua_ls",
+				"mdx_analyzer",
 			},
 		})
 
