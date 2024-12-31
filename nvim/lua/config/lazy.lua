@@ -30,3 +30,5 @@ require("lazy").setup({
 		notify = false,
 	},
 })
+
+vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy", noremap = true })

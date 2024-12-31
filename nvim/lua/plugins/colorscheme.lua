@@ -1,17 +1,17 @@
 return {
-	{
-		"oxfist/night-owl.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			local night_owl = require("night-owl")
-			--@param options Config|nil
-			night_owl.setup({
-				transparent_background = true,
-			})
-			vim.cmd.colorscheme("night-owl")
-		end,
-	},
+	-- {
+	-- 	"oxfist/night-owl.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		local night_owl = require("night-owl")
+	-- 		--@param options Config|nil
+	-- 		night_owl.setup({
+	-- 			transparent_background = true,
+	-- 		})
+	-- 		vim.cmd.colorscheme("night-owl")
+	-- 	end,
+	-- },
 	-- {
 	-- 	"scottmckendry/cyberdream.nvim",
 	-- 	lazy = false,
@@ -27,24 +27,24 @@ return {
 	-- 		vim.cmd("colorscheme cyberdream")
 	-- 	end,
 	-- },
-	-- {
-	-- 	"sainnhe/everforest",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.g.everforest_background = "dark"
-	-- 		vim.g.everforest_enable_italic = true
-	-- 		vim.g.everforest_transparent_background = 2
-	-- 		vim.cmd.colorscheme("everforest")
-	-- 	end,
-	-- },
+	{
+		"sainnhe/everforest",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.g.everforest_background = "dark"
+			vim.g.everforest_enable_italic = true
+			vim.g.everforest_transparent_background = 2
+			vim.cmd.colorscheme("everforest")
+		end,
+	},
 	-- {
 	-- 	"rose-pine/neovim",
 	-- 	name = "rose-pine",
 	-- 	config = function()
 	-- 		require("rose-pine").setup({
 	-- 			styles = {
-	-- 				transparency = true,
+	-- 				-- transparency = true,
 	-- 			},
 	-- 		})
 	-- 		vim.cmd("colorscheme rose-pine")
@@ -74,7 +74,7 @@ return {
 	-- 				lualine_transparency = true,
 	-- 			},
 	-- 		})
-	-- 		-- vim.cmd("colorscheme onedark_dark")
+	-- 		vim.cmd("colorscheme onedark_dark")
 	-- 	end,
 	-- },
 	-- {
