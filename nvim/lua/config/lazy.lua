@@ -19,11 +19,11 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
-	colorscheme = "catppuccin",
+	colorscheme = "everforest",
 	spec = {
 		{ import = "plugins" },
 	},
-	install = { colorscheme = { "catppuccin" } },
+	install = { colorscheme = { "everforest" } },
 	checker = { enabled = true, notify = false },
 	change_detection = {
 		enabled = true,
