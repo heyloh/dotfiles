@@ -31,3 +31,5 @@ end, "Reload config")
 
 remap("v", "<leader>y", '"+y', "Yank to clipboard", true)
 remap("n", "<leader>bc", "<cmd>w <bar> %bd <bar> e# <bar> bd# <CR>", "Close other buffers")
+
+remap("n", "<C-L>", '<cmd>let @/ = ""<CR>', "Clear highlights")
