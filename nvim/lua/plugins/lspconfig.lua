@@ -26,13 +26,14 @@ return {
 					"tailwindcss",
 					"lua_ls",
 				},
+				automatic_installation = true,
 			})
 
 			mason_tool_installer.setup({
 				ensure_installed = {
 					"prettier",
 					"stylua",
-					"eslint_d",
+					{ "eslint_d", version = "13.1.2" },
 				},
 			})
 		end,
@@ -58,19 +59,39 @@ return {
 					local opts = { buffer = ev.buf, silent = true }
 
 					opts.desc = "Show references"
-					keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
+					keymap.set(
+						"n",
+						"gR",
+						"<cmd>FzfLua lsp_references jump_to_single_result=true ignore_current_line=true<CR>",
+						opts
+					)
 
 					opts.desc = "Go to declaration"
 					keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 
 					opts.desc = "Show definitions"
-					keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
+					keymap.set(
+						"n",
+						"gd",
+						"<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<CR>",
+						opts
+					)
 
 					opts.desc = "Show implementations"
-					keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
+					keymap.set(
+						"n",
+						"gi",
+						"<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<CR>",
+						opts
+					)
 
 					opts.desc = "Show type definitions"
-					keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
+					keymap.set(
+						"n",
+						"gt",
+						"<cmd>FzfLua lsp_typedefs jump_to_single_result=true ignore_current_line=true<CR>",
+						opts
+					)
 
 					opts.desc = "See available code actions"
 					keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
@@ -79,10 +100,15 @@ return {
 					keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
 
 					opts.desc = "Show buffer diagnostics"
-					keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
+					keymap.set(
+						"n",
+						"<leader>cD",
+						"<cmd>FzfLua lsp_document_diagnostics jump_to_single_result=true ignore_current_line=true<CR>",
+						opts
+					)
 
 					opts.desc = "Show line diagnostics"
-					keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+					keymap.set("n", "<leader>cd", vim.diagnostic.open_float, opts)
 
 					opts.desc = "Go to previous diagnostic"
 					keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
